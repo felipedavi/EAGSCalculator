@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding.buttonSave.setOnClickListener { openNextActivity() }
     }
     private fun openNextActivity() {
-        val pt = binding.editPortugues.text.toString().toFloat()
-        val esp = binding.editEspecificas.text.toString().toFloat()
+        val pt = binding.editPortugues.text.toString().toInt()
+        val esp = binding.editEspecificas.text.toString().toInt()
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("pt", pt)
         intent.putExtra("esp", esp)

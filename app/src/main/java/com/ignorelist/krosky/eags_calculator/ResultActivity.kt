@@ -14,8 +14,8 @@ class ResultActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val bundle :Bundle ?=intent.extras
-        val pt = bundle!!.getFloat("pt")
-        val esp = bundle.getFloat("esp")
+        val pt = bundle!!.getInt("pt")
+        val esp = bundle.getInt("esp")
         if ((pt>=20) and (esp>=30)) {
             val m = (((pt/40) + (2*(esp/60)))/3)*10
             binding.textResult.text = "Média: $m"
