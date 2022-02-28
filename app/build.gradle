@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ignorelist.krosky.eags_calculator"
+        applicationId "io.github.felipedavi.eags_calculator"
         minSdk 21
         targetSdk 32
         versionCode 1
