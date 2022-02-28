@@ -12,14 +12,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.buttonSave.setOnClickListener { openNextActivity() }
+        binding.buttonSave.setOnClickListener {
+            val pt = binding.editPortugues.text.toString().trim()
+            val esp = binding.editEspecificas.text.toString().trim()
+            when {
+                pt.isEmpty() -> {
+                    binding.editPortugues.error = "Campo necessário"
+                    return@setOnClickListener
+                }
+                esp.isEmpty() -> {
+                    binding.editEspecificas.error = "Campo necessário"
+                    return@setOnClickListener
+                }
+                else -> {
+                    openNextActivity()
+                }
+            }
+        }
     }
+
     private fun openNextActivity() {
-        val pt = binding.editPortugues.text.toString().toInt()
-        val esp = binding.editEspecificas.text.toString().toInt()
         val intent = Intent(this, ResultActivity::class.java)
-        intent.putExtra("pt", pt)
-        intent.putExtra("esp", esp)
         startActivity(intent)
     }
 }
