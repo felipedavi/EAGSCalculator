@@ -25,14 +25,18 @@ class MainActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
                 else -> {
-                    openNextActivity()
+                    openNextActivity(pt.toInt(), esp.toInt())
                 }
             }
+            openNextActivity(pt.toInt(), esp.toInt())
         }
     }
 
-    private fun openNextActivity() {
-        val intent = Intent(this, ResultActivity::class.java)
+    private fun openNextActivity(pt: Int, esp: Int) {
+        val intent = Intent(this, ResultActivity::class.java).apply {
+            putExtra("pt", pt)
+            putExtra("esp", esp)
+        }
         startActivity(intent)
     }
 }
