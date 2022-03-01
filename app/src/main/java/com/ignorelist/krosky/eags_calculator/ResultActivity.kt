@@ -17,7 +17,7 @@ class ResultActivity : AppCompatActivity() {
         val mp = (pt.toDouble().div(40))*10
         val mesp = (esp.toDouble()/60)*10
         val r = String.format("Média de Português: %.2f\nMédia das Específicas: %.2f", mp, mesp)
-        if ((mp>=5) and (mesp>=5)) {
+        if ((mp>=5) or (mesp>=5)) {
             val m = mp+(mesp*2)/3
             binding.textResult.text = String.format("%s\nMédia: %.2f", r,m)
         } else {
